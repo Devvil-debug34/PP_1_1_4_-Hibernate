@@ -61,7 +61,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
         String sql = "DELETE FROM users WHERE id = ?";
 
-        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)){
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setLong(1, id);
             preparedStatement.executeUpdate();
         } catch (SQLException e) {
@@ -92,7 +92,7 @@ public class UserDaoJDBCImpl implements UserDao {
     public void cleanUsersTable() { // очистить таблицу пользователей
         String sql = "DELETE FROM users";
 
-        try (Statement statement = connection.createStatement()){
+        try (Statement statement = connection.createStatement()) {
             statement.executeUpdate(sql);
         } catch (SQLException e) {
             e.printStackTrace();
